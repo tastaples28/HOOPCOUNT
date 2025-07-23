@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HoopCount</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- MAIN MENU -->
+    <div id="main-menu">
+      <h1>HoopCount</h1>
+      <label for="playerName">Enter Player Name:</label>
+      <input type="text" id="playerName" placeholder="" />
+      <button id="startBtn" disabled>Start Workout</button>
+      <div id="loadPrompt" style="display:none; margin-top: 15px;">
+        <p>Saved workout found for <span id="savedPlayerName"></span>.</p>
+        <button id="loadBtn">Load Saved Workout</button>
+        <button id="newBtn">Start New Workout</button>
+      </div>
+    </div>
+
+    <!-- COUNTER SCREEN -->
+    <div id="counter-screen" style="display:none;">
+      <h1 id="playerTitle">HoopCount</h1>
+      <div class="stats">
+        <p>Makes: <span id="makes">0</span></p>
+        <p>Misses: <span id="misses">0</span></p>
+        <p>Attempts: <span id="attempts">0</span></p>
+        <p>FG%: <span id="percentage">0.0%</span></p>
+      </div>
+      <div class="buttons">
+        <div class="top-row">
+          <button onclick="addMake()">Make</button>
+          <button onclick="addMiss()">Miss</button>
+        </div>
+        <div class="bottom-row">
+          <button class="reset" onclick="resetStats()">Reset</button>
+          <button class="save" onclick="saveWorkout()">Save</button>
+          <button class="back" onclick="backToMenu()">Back</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
